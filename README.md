@@ -1,3 +1,19 @@
-# Nitro starter
+# Nitro Prisma Cloudflare issue
 
-Look at the [nitro quick start](https://nitro.build/guide#quick-start) to learn more how to get started.
+Please setup a suitable DATABASE_URL.
+
+```
+pnpm install
+pnpm prisma generate
+pnpm prisma db push
+pnpm dev
+```
+
+```
+pnpm build --preset=cloudflare_module
+
+# have DATABASE_URL access, then run:
+npx wrangler --cwd .output dev
+```
+
+Hit `/api/users`
